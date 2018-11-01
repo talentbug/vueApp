@@ -11,6 +11,9 @@ Vue.use(MintUI)
 
 // 导入MUI样式
 import './lib/css/mui.min.css'
+// 带入MUI扩展字体样式
+import './lib/fonts/mui-icons-extra.ttf'
+import './lib/css/icons-extra.css'
 
 Vue.config.productionTip = false
 
