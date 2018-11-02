@@ -35,7 +35,10 @@ export default {
 #app {
   padding: 40px 0 50px 0;
   overflow-x: hidden;
-  background: #fff;
+  background-color: #fff;
+}
+html {
+  background-color: #fff;
 }
 .v-enter {
   opacity: 0;
