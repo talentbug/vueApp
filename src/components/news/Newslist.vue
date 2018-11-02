@@ -1,45 +1,44 @@
 <template>
     <ul class="mui-table-view">
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<img class="mui-media-object mui-pull-left" src="../../images/menu1.png">
+				<li class="mui-table-view-cell mui-media" v-for="item in newsList" :key="item.id">
+					<router-link :to="'/home/newslist/'+item.id">
+						<img class="mui-media-object mui-pull-left" :src="item.img_url">
 						<div class="mui-media-body">
-							<h3>幸福</h3>
+							<h3>{{item.title}}}</h3>
 							<p class='mui-ellipsis'>
-                                <span>发表时间：2018-10-10 08:08:08</span>
-                                <span>点击:0次</span>
-                            </p>
+									<span>发表时间：{{item.add_time | dateFormat('YYYY-MM-DD HH:mm')}}</span>
+									<span>点击:{{item.click}}次</span>
+							</p>
 						</div>
-					</a>
+					</router-link>
 				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<img class="mui-media-object mui-pull-left" src="../../images/menu1.png">
-						<div class="mui-media-body">
-							<h3>幸福</h3>
-							<p class='mui-ellipsis'>
-                                <span>发表时间：2018-10-10 08:08:08</span>
-                                <span>点击:0次</span>
-                            </p>
-						</div>
-					</a>
-				</li><li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<img class="mui-media-object mui-pull-left" src="../../images/menu1.png">
-						<div class="mui-media-body">
-							<h3>幸福</h3>
-							<p class='mui-ellipsis'>
-                                <span>发表时间：2018-10-10 08:08:08</span>
-                                <span>点击:0次</span>
-                            </p>
-						</div>
-					</a>
-				</li>
-
 			</ul>
 </template>
 <script>
-export default {};
+// 引入toast样式
+import { Toast } from "mint-ui";
+export default {
+  data() {
+    return {
+      newsList: []
+    };
+  },
+  created() {
+    this.getnewsList();
+  },
+  methods: {
+    getnewsList() {
+      this.$http.get("/api/getnewslist").then(res => {
+        // console.log(res);
+        if (res.data.status === 0) {
+          this.newsList = res.data.message;
+        } else {
+          Toast("数据加载失败");
+        }
+      });
+    }
+  }
+};
 </script>
 
 <style lang="less" scoped>

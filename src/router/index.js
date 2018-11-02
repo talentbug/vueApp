@@ -6,11 +6,13 @@ import Member from '@/components/tabbar/Member'
 import Shopcar from '@/components/tabbar/Shopcar'
 import Search from '@/components/tabbar/Search'
 import Newslist from '@/components/news/Newslist'
-import Photoshar from '@/components/news/Photoshar'
-import Shopbuy from '@/components/news/Shopbuy'
-import Feedback from '@/components/news/Feedback'
-import Videoarea from '@/components/news/Videoarea'
-import Contactus from '@/components/news/Contactus'
+import Newsinfo from '@/components/news/Newsinfo'
+
+import Photoshar from '@/components/Photoshar'
+import Shopbuy from '@/components/Shopbuy'
+import Feedback from '@/components/Feedback'
+import Videoarea from '@/components/Videoarea'
+import Contactus from '@/components/Contactus'
 
 
 Vue.use(Router)
@@ -36,6 +38,10 @@ export default new Router({
     {
       path: '/search',
       component: Search
+    },
+    {
+      path: '/home/newslist/:id',
+      component: Newsinfo
     },
     {
       path: '/home/newslist',

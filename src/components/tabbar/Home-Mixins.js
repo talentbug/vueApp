@@ -14,7 +14,7 @@ export default {
         if (res.data.status === 0) {
           this.getimgs = res.data.message;
         } else {
-          toast("数据加载失败!");
+          Toast("数据加载失败!");
         }
       });
     }

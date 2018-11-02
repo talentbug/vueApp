@@ -24,8 +24,15 @@ import './lib/css/mui.min.css'
 import './lib/fonts/mui-icons-extra.ttf'
 import './lib/css/icons-extra.css'
 
+// 挂载axios
 axios.defaults.baseURL = "http://www.lovegf.cn:8899"
 Vue.prototype.$http = axios
+
+import moment from 'moment'
+// 给时间设置全局过滤器
+Vue.filter('dateFormat', function (dateStr, pattern = "YYYY-MM-DD HH:mm:ss") {
+  return moment(dateStr).format(pattern)
+})
 
 Vue.config.productionTip = false
 

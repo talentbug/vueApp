@@ -32,6 +32,8 @@
 </template>
 
 <script>
+// 引入toast样式
+import { Toast } from "mint-ui";
 import mix from "../tabbar/Home-Mixins.js";
 export default {
   mixins: [mix]

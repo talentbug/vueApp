@@ -33,8 +33,9 @@ export default {
 
 <style lang="less">
 #app {
-  padding-top: 40px;
+  padding: 40px 0 50px 0;
   overflow-x: hidden;
+  background: #fff;
 }
 .v-enter {
   opacity: 0;
