@@ -8,6 +8,7 @@ import axios from 'axios'
 // 导入Mint-UI
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
+import mui from './lib/js/mui.min.js'
 Vue.use(MintUI)
 
 // 导入Mint-UI轮播图样式
