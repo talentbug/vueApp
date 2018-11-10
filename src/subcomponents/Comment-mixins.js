@@ -1,3 +1,8 @@
+// 引入toast样式
+import {
+  Toast
+} from "mint-ui";
+
 export default {
   data() {
     return {

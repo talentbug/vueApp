@@ -8,7 +8,6 @@ import axios from 'axios'
 // 导入Mint-UI
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
-import mui from './lib/js/mui.min.js'
 Vue.use(MintUI)
 
 // 导入Mint-UI轮播图样式
@@ -24,6 +23,10 @@ import './lib/css/mui.min.css'
 // 带入MUI扩展字体样式
 import './lib/fonts/mui-icons-extra.ttf'
 import './lib/css/icons-extra.css'
+
+// 引入VuePreview插件
+import VuePreview from 'vue-preview'
+Vue.use(VuePreview)
 
 // 挂载axios
 axios.defaults.baseURL = "http://www.lovegf.cn:8899"

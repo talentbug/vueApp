@@ -1,3 +1,4 @@
+import swiper from "@/subcomponents/Swiper.vue";
 export default {
   data() {
     return {
@@ -18,5 +19,8 @@ export default {
         }
       });
     }
+  },
+  components: {
+    swiper
   }
 }
